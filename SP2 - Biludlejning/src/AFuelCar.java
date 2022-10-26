@@ -1,5 +1,10 @@
 public abstract class AFuelCar extends ACar{
-    int kmPrLitre;
+    protected int kmPrLitre;
+
+    public AFuelCar(String registrationNumber, String make, String model, int numberOfDoors, int kmPrLitre) {
+        super(registrationNumber,make,model,numberOfDoors);
+        this.kmPrLitre=kmPrLitre;
+    }
 
     @Override
     public abstract String getRegistrationNumber();
@@ -15,12 +20,12 @@ public abstract class AFuelCar extends ACar{
 
     public abstract String getFuel(); //Returns Gasoline or Diesel
 
-    public int kmPrLitre(){
-        return kmPrLitre();
+    public int getkmPrLitre(){
+        return getkmPrLitre();
     } //returns km/l
 
     @Override
     public String toString(){
-        return (registrationNumber+", "+make+", "+model+", "+numberOfDoors+", "+kmPrLitre+".").toString();
+        return ("reg. nr: "+registrationNumber+", make: "+make+", model: "+model+", # of doors: "+numberOfDoors+", km pr. litre: "+kmPrLitre+".");
     }
 }

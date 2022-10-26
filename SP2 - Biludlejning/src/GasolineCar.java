@@ -1,40 +1,34 @@
 public class GasolineCar extends AFuelCar{
-    private String registrationNumber;
-    private String make;
-    private String model;
-    private int numberOfDoors;
-    private String fuel;
 
-    public GasolineCar(String registrationNumber, String make, String model, int numberOfDoors) {
-        this.registrationNumber = registrationNumber;
-        this.make = make;
-        this.model = model;
-        this.numberOfDoors = numberOfDoors;
+    private String fuel = "gasoline";
+
+    public GasolineCar(String registrationNumber, String make, String model, int numberOfDoors, int kmPrLitre) {
+        super(registrationNumber,make,model,numberOfDoors, kmPrLitre);
     }
 
     @Override
     public String getRegistrationNumber() {
-        return null;
+        return registrationNumber;
     }
 
     @Override
     public String getMake() {
-        return null;
+        return make;
     }
 
     @Override
     public String getModel() {
-        return null;
+        return model;
     }
 
     @Override
     public int getNumberOfDoors() {
-        return 0;
+        return numberOfDoors;
     }
 
     @Override
     public String getFuel() {
-        return "Gasoline";
+        return fuel;
     }
 
     @Override
@@ -60,7 +54,7 @@ public class GasolineCar extends AFuelCar{
         }
         if(kmPrLitre < 5)
         {
-            registrationFee = 1040;
+            registrationFee = 10040;
         }
 
         return registrationFee;

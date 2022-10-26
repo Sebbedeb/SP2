@@ -1,43 +1,38 @@
 public class DieselCar extends AFuelCar{
-    private String registrationNumber;
-    private String make;
-    private String model;
-    private int numberOfDoors;
 
-    private String fuel;
+    private String fuel ="diesel";
 
     private boolean particleFilter;
 
-    public DieselCar(String registrationNumber, String make, String model, int numberOfDoors, boolean particleFilter) {
-        this.registrationNumber = registrationNumber;
-        this.make = make;
-        this.model = model;
-        this.numberOfDoors = numberOfDoors;
+    public DieselCar(String registrationNumber, String make, String model, int numberOfDoors, boolean particleFilter, int kmPrLitre) {
+        super(registrationNumber,make,model,numberOfDoors, kmPrLitre);
+
+        this.particleFilter=particleFilter;
     }
 
     @Override
     public String getRegistrationNumber() {
-        return null;
+        return registrationNumber;
     }
 
     @Override
     public String getMake() {
-        return null;
+        return make;
     }
 
     @Override
     public String getModel() {
-        return null;
+        return model;
     }
 
     @Override
     public int getNumberOfDoors() {
-        return 0;
+        return numberOfDoors;
     }
 
     @Override
     public String getFuel() {
-        return "Diesel";
+        return fuel;
     }
 
     @Override

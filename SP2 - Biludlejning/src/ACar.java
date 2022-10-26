@@ -4,6 +4,13 @@ public abstract class ACar implements Car{
     protected String model;
     protected int numberOfDoors;
 
+    protected ACar(String registrationNumber, String make, String model, int numberOfDoors) {
+        this.registrationNumber = registrationNumber;
+        this.make = make;
+        this.model = model;
+        this.numberOfDoors = numberOfDoors;
+    }
+
     @Override
     public abstract String getRegistrationNumber();
 

@@ -1,17 +1,10 @@
 public class ElectricCar extends ACar{
-    private String registrationNumber;
-    private String make;
-    private String model;
-    private int numberOfDoors;
     private int batteryCapacity;
     private int maxRangeKm;
     private int whPrKm;
 
     public ElectricCar(String registrationNumber, String make, String model, int numberOfDoors, int batteryCapacity, int maxRangeKm) {
-        this.registrationNumber = registrationNumber;
-        this.make = make;
-        this.model = model;
-        this.numberOfDoors = numberOfDoors;
+        super(registrationNumber,make,model,numberOfDoors);
         this.batteryCapacity = batteryCapacity;
         this.maxRangeKm = maxRangeKm;
     }
@@ -39,8 +32,8 @@ public class ElectricCar extends ACar{
     @Override
     public int getRegistrationFee() {
         int registrationFee=0;
-        double kmL = 100/this.getwhPrKm();
-        kmL = kmL/91.25;
+        double kmL = this.getwhPrKm()/91.25;
+        kmL = 100/kmL/100;
 
         if(kmL > 20 && kmL <= 50)
         {
@@ -75,11 +68,11 @@ public class ElectricCar extends ACar{
     }
 
     public int getwhPrKm(){
-        return maxRangeKm/batteryCapacity;
+        return batteryCapacity/maxRangeKm;
     }
 
     @Override
     public String toString(){
-        return registrationNumber+", "+make+", "+model+", "+numberOfDoors+", "+batteryCapacity+", "+maxRangeKm;
+        return ("reg. nr.: "+registrationNumber+", make: "+make+", model: "+model+", # of doors: "+numberOfDoors+", battery capacity: "+batteryCapacity+", max range in km: "+maxRangeKm+".");
     }
 }
